@@ -9,11 +9,15 @@ import useFetch from "../../../hook/useFetch";
 
 const Nearbyjobs = () => {
   const router = useRouter();
+
   const { data, isLoading, error } = useFetch("search", {
     query: "React Native developer",
     num_pages: "1",
   });
-
+  const navigateToJobDetails = (jobId) => {
+    router.push(`/job-details/${jobId}`);
+  };
+  
   return (
     <View style={styles.container}>
       <View style={styles.header}>
@@ -33,7 +37,7 @@ const Nearbyjobs = () => {
             <NearbyJobCard
               job={job}
               key={`nearby-job-${job.job_id}`}
-              handleNavigate={() => router.push(`/job-details/${job.job_id}`)}
+              handleNavigate={() => navigateToJobDetails(job.job_id)}
             />
           ))
         )}

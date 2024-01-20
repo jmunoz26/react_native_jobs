@@ -8,6 +8,12 @@
       "expo-router"
     ],
     "name": "react_native_jobs",
-    "slug": "react_native_jobs"
+    "slug": "react_native_jobs",
+    "android": {
+      "package": "com.katekyo03.react_native_jobs"
+    },
+    "ios": {
+      "bundleIdentifier": "y"
+    }
   }
 }
